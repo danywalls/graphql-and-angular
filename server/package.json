@@ -2,11 +2,17 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-
   "scripts": {
     "start": "npx ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@graphql-tools/mock": "^9.0.25",
+    "@graphql-tools/schema": "^10.0.25",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6"
+  }
 }
