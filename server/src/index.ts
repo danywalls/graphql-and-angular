@@ -1,13 +1,13 @@
-import {ApolloServer} from "@apollo/server";
-import {startStandaloneServer} from "@apollo/server/standalone";
-import {schemaWithMocks} from "./schema-mocks";
-
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { typeDefs, resolvers } from "./schema";
 
 async function startApolloServer() {
   const server = new ApolloServer({
-    schema: schemaWithMocks
+    typeDefs,
+    resolvers,
   });
-  const {url} = await startStandaloneServer(server);
+  const { url } = await startStandaloneServer(server);
   console.log(`
     🚀  Server is running at ${url}
   `);
