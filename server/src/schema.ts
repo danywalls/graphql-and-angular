@@ -21,7 +21,7 @@ export const typeDefs = gql`
   }
 `;
 
-// Resolvers to fetch data from the Fake Store REST API
+
 export const resolvers = {
   Query: {
     products: async () => {
@@ -30,9 +30,7 @@ export const resolvers = {
       if (!res.ok) {
         throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`);
       }
-      const data = (await res.json()) as any[];
-      // The API already matches the GraphQL schema shape, so return as-is
-      return data;
+      return await res.json()
     },
   },
 };
